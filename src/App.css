@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.home,
+.RIssueMaterial,
+.RPoReceipt {
+  display: flex;
+  height: 90vh;
+  /* align-items: first baseline; */
+  align-items: center; 
+  justify-content: center;
+  font-size: 3rem;
+  background-image: url(./Icon/HH.png);
+  background-size: 1920px 1080px;
+  background-color: #e1c3d3;
+  color: rgb(255, 255, 255);
+  text-decoration:solid ; 
+}
+
+.text{
+  justify-content: flex-start;
+  background-color: #0b0b0b;
+  text-align: center;
+}
+
+.home2 {
+  /* align-items: center;  */
+  /* display: flex; */
+  justify-content: flex-start;
+  align-items: center; 
+  justify-content: center;
+  padding: 8px 0px 8px 16px;
+}
+
+/* Navbar CSS */
+.navbar {
+  background-color: #f675ba;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  color: #ffffff;
+}
+
+.nav-menu {
+  background-color: #e4c6ec;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 450ms;
+  color: #ec0b0b;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+  color: #ec0b0b;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #151414;
+  font-size: 15px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: #000000;
+  color: #ec0b0b;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #121212;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-text{
+  font-weight: bold;
+  /* text-decoration-line: underline; */
+}
+
+.rcv-val{
+  padding: 0 5px;
+  color: blue;
+  font-weight: normal;
+}
+
+/* .RPORDTL{
+  background-color: rgb(216, 226, 232);
+  font-weight: bold;
+} */
+
+.RPORFunctionName{
+  background-color: rgb(213, 229, 242);
+}
+
+.RPORDTL{
+  font-weight: bold;
+}
+.RIMFunctionName
+{
+  background-color: rgb(213, 229, 242);
+}
+
+.mb-3{
+  font-weight: bold;
+}
+
+.form-label{
+  text-decoration-line: underline;
+}
+
+.JobDtl-Confirm-btn{
+  margin-right:15px;
+  justify-content: center;
+  
+}
+
+.btn{
+  margin-right:15px;
+}
+
+.RPOVAL{
+  color: blue;
+  text-decoration-line: underline;
+}
+
+/* .RPORbtn{
+  margin-left:15px;
+} */
+.modal-modal-description{
+  font-size: 30px;
+}
+
+
+span {
+  margin-left: 16px;
+}
