@@ -4,6 +4,12 @@ import { useState } from "react";
 // /import { BrowserRouter } from 'react-router-dom';
 //import { AppBar } from "@mui/material";
 import ContainerTrackingSvc from "../Component/ContainerTrackingSvc";
+import Modal from "@mui/material/Modal";
+// import Button from '@mui/material/Button';
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import logo from "../Icon/checked.png";
+import ReactModal from "react-modal";
 
 function RPOReceiipt() {
   // const [company, setCompany] = useState("");
@@ -29,6 +35,8 @@ function RPOReceiipt() {
 
   const [LoadPlan, setLoadPlan] = useState([]);
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const getLoadPlan = () => {
     Axios.get("http://localhost:3001/getLoadPlan", {
       params: {
@@ -40,6 +48,21 @@ function RPOReceiipt() {
     });
   };
 
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setIsOpen(false);
+  const handleOpen = () => setOpen(true);
   // const handleSubmit = (event) => {
   //   var myHeaders = new Headers();
   //   myHeaders.append(
@@ -156,7 +179,9 @@ function RPOReceiipt() {
       {/* <AppBar style={{ marginLeft: "20px" }}> INTESA </AppBar> */}
       <br />
       <h1 className="RPORFunctionName">PO Receipt</h1>
-      <h4 className="RPORDTL">Receipt Number : <b className="RPOVAL">RT34023</b></h4>
+      <h4 className="RPORDTL">
+        Receipt Number : <b className="RPOVAL">RT34023</b>
+      </h4>
       <div className="information">
         <form action="">
           {/* <div className="mb-3">
@@ -199,9 +224,45 @@ function RPOReceiipt() {
       </div>
       <hr />
       <div className="LoadPlan"></div>
-      <button className="btn btn-success btn-lg" onClick={getLoadPlan}>
+      <button className="btn btn-success btn-lg" onClick={handleOpen}>
         OK
       </button>
+      <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box sx={style}>
+                    <Typography
+                      id="modal-modal-title"
+                      variant="h6"
+                      component="h2"
+                    >
+                      Transaction Status
+                    </Typography>
+                    <Typography
+                      className="modal-modal-description"
+                      id="modal-modal-description"
+                      sx={{ mt: 2 }}
+                    >
+                      <img
+                        style={{ width: 25, height: 25, margin: 8 }}
+                        src={logo}
+                        className="Icon"
+                        alt=""
+                      />
+                      Transaction Successful
+                    </Typography>
+                    <button
+                      className="closedbtn btn btn-secondary"
+                      onClick={handlereload}
+                      style={{ marginLeft: "130px", border: "100" }}
+                    >
+                      Close
+                    </button>
+                  </Box>
+                </Modal>
 
       <button className="btn btn-secondary btn-lg" onClick={handlereload}>
         Cancel
@@ -239,10 +300,11 @@ function RPOReceiipt() {
               <div className="d-flex">
                 <button
                   className="btn btn-primary"
-                  onClick={ContainerTrackingSvc}
+                  // onClick={ContainerTrackingSvc}
                 >
                   Confirm
                 </button>
+                
 
                 {/* <input type="number"
                       style={{ width: "300px" }}
