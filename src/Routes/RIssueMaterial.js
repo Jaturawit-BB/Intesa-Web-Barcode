@@ -9,12 +9,13 @@ import ReactModal from "react-modal";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 function RIssueMaterial() {
-  const [cuttingOrder, setCuttingOrder] = useState("");
+  const [pickSlip, setPickSlip] = useState("");
   // const [coilNumber, setCoilNumber] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const reload = () => window.location.reload();
   // const [show, setShow] = useState(false);
   const handleClose = () => setIsOpen(false);
+  const [updated, setUpdated] = useState("");
 
   // const handleShow = () => setIsOpen(true);
 
@@ -27,6 +28,15 @@ function RIssueMaterial() {
   const navigateIssueMatDTL = () => {
     // 👇️ navigate to /contacts
     navigate("/RIssueMaterialDTL");
+  };
+
+  const handleKeyTab = (event) => {
+    if (event.key === "Tab") {
+      navigateIssueMatDTL();
+    }
+    if (event.key === "Enter") {
+      navigateIssueMatDTL();
+    }
   };
 
   return (
@@ -50,9 +60,10 @@ function RIssueMaterial() {
               type="text"
               className="form-control"
               placeholder="Scan Pick Slip Number"
+              onKeyDown={handleKeyTab}
               required
               onChange={(event) => {
-                setCuttingOrder(event.target.value);
+                setPickSlip(event.target.value);
               }}
             />
           </div>
@@ -78,7 +89,8 @@ function RIssueMaterial() {
       <hr />
       <div className="JobDtl"></div>
       {/* <button className="btn btn-success" onClick={() => IssueMaterial(cuttingOrder,coilNumber)}> */}
-      <button className="btn btn-primary btn-lg" onClick={navigateIssueMatDTL}>
+      <button className="btn btn-primary btn-lg" onClick={() => navigateIssueMatDTL(pickSlip)}>
+      {/* <button className="btn btn-primary btn-lg" onClick={navigateIssueMatDTL}> */}
         OK
       </button>
       {/* <button className="btn btn-primary btn-lg" onClick={() => {
@@ -100,7 +112,7 @@ function RIssueMaterial() {
                 </Routes>
 
       {/* Call Model after enter OK button */}
-      <div className="Modal">
+      {/* <div className="Modal">
         <ReactModal isOpen={isOpen} contentLabel="Example Modal">
           Material Issue Detail.
           <br />
@@ -108,7 +120,7 @@ function RIssueMaterial() {
             <button
               className="JobDtl-Confirm-btn btn-success btn-lg"
               onClick={() => {
-                IssueMaterial(cuttingOrder);
+                // IssueMaterial(cuttingOrder);
                 handlereload();
               }}
             >
@@ -122,7 +134,7 @@ function RIssueMaterial() {
             </button>
           </div>
         </ReactModal>
-      </div>
+      </div> */}
     </div>
   );
 }
