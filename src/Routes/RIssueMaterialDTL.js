@@ -79,11 +79,11 @@ function RIssueMaterialDTL() {
 
   const rows = [
     createData("A", "Description A", 2, "KG", 1, 1, 1),
-    createData("B", "Description A", 37, "EA", 2, 1, 1),
-    createData("C", "Description A", 24, "BOX", 3, 2, 1),
-    createData("D", "Description A", 67, "PCS", 4, 1, 1),
-    createData("E", "Description A", 49, "EA", 5, 1, 1),
-    createData("E", "Description A", 49, "EA", 6, 2, 1),
+    createData("B", "Description B", 37, "EA", 2, 1, 1),
+    createData("C", "Description C", 24, "BOX", 3, 2, 1),
+    createData("D", "Description D", 67, "PCS", 4, 1, 1),
+    createData("E", "Description E", 49, "EA", 5, 1, 1),
+    createData("E", "Description F", 49, "EA", 6, 2, 1),
   ];
 
   const getData = () => {
