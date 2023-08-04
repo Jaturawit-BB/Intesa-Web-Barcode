@@ -18,13 +18,15 @@ import Home from "./Routes/Home";
 import Navbar from "./Component/Page/Navbar";
 import "./App.css";
 
-<title>xxxx</title>
+<title>xxxx</title>;
 const AppLayout = () => (
   <>
     <Navbar />
     <Outlet />
   </>
 );
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -69,7 +71,7 @@ const router = createBrowserRouter(
 //   //   //   </div>
 //   //   // ),
 //   // },
-  
+
 //   // {
 //   //   path: "RPoReceipt",
 //   //   element: <RPoReceipt/>,
