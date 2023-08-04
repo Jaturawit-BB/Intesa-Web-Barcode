@@ -32,6 +32,8 @@ export const SidebarData = [
     path: "/RPutAwayProcess",
     icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
+    
+    
   },
 
   {
