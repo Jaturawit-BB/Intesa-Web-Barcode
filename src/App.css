@@ -52,6 +52,11 @@
 
 .MDBCardBody{
   background-color: #F4F4F4;
+  box-shadow: 1px 1px 10px 0px rgb(134, 132, 132);
+}
+
+.MDBColH{
+  box-shadow: 1px 1px 10px 0px rgb(134, 132, 132);
 }
 .custom-card-title {
   font-size: 24px; /* Change the value to your desired font size */
@@ -109,7 +114,7 @@
     justify-content: center;
     position: fixed;
     top: 0;
-    left: -50%;
+    left: -100%;
     transition: 350ms;
     z-index: 50;
   /* background-color: #ecc6c6;
