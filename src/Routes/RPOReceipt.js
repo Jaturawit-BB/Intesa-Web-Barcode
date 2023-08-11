@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import { useState } from "react";
+import Form from "react-bootstrap/Form";
 // /import { BrowserRouter } from 'react-router-dom';
 //import { AppBar } from "@mui/material";
 import ContainerTrackingSvc from "../Component/ContainerTrackingSvc";
@@ -175,7 +176,12 @@ function RPOReceiipt() {
   // }
 
   return (
+   
+     
     <div className="App container">
+      <br />
+      <div className="Add-Field">
+      <Form>
       {/* <AppBar style={{ marginLeft: "20px" }}> INTESA </AppBar> */}
       <br />
       <h1 className="RPORFunctionName">PO Receipt</h1>
@@ -227,6 +233,14 @@ function RPOReceiipt() {
       <button className="btn btn-success btn-lg" onClick={handleOpen}>
         OK
       </button>
+      <button className="btn btn-secondary btn-lg" onClick={handlereload}>
+        Cancel
+      </button>
+
+      </Form>
+      </div>
+      
+      
       <Modal
                   open={open}
                   onClose={handleClose}
@@ -264,9 +278,9 @@ function RPOReceiipt() {
                   </Box>
                 </Modal>
 
-      <button className="btn btn-secondary btn-lg" onClick={handlereload}>
+      {/* <button className="btn btn-secondary btn-lg" onClick={handlereload}>
         Cancel
-      </button>
+      </button> */}
 
       <br />
       <br />
@@ -322,6 +336,7 @@ function RPOReceiipt() {
         );
       })}
     </div>
+    
   );
 }
 
